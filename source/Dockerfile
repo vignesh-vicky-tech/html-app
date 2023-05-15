@@ -1,5 +1,3 @@
-FROM centos:latest
-RUN yum -y install httpd
-COPY index.html /var/www/html/
-CMD [“/usr/sbin/httpd”, “-D”, “FOREGROUND”]
+FROM php:7.2-apache
+COPY index.php/ /var/www/html/
 EXPOSE 80
